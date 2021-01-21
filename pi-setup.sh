@@ -2,11 +2,11 @@
 SETUP_COMPLETE_FILE=/var/.pisetup
 if [[ -f "$FILE" ]]; then
     echo "Setup has run, skipping"
+    # Setup Rapsi-Config
+    /usr/lib/raspi-config/init_resize.sh
     exit 0
 fi
 
-# Setup Rapsi-Config
-/usr/lib/raspi-config/init_resize.sh
 
 source /boot/montior.env
 
