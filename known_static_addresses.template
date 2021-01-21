@@ -1,0 +1,10 @@
+
+# ---------------------------
+#
+# STATIC MAC ADDRESS LIST
+#
+# 00:00:00:00:00:00 Alias #comment
+# ---------------------------
+
+$TEAGAN_MAC Teagan
+$ALAN_MAC Alan

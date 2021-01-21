@@ -1,0 +1,30 @@
+# ---------------------------
+#								
+# MOSQUITTO PREFERENCES
+#								
+# ---------------------------
+
+# IP ADDRESS OR HOSTNAME OF MQTT BROKER
+mqtt_address=$MQTTHOST
+
+# MQTT BROKER USERNAME
+mqtt_user='$CLIENTID'
+
+# MQTT BROKER PASSWORD mqtt_password=password
+
+# MQTT PUBLISH TOPIC ROOT 
+mqtt_topicpath='monitor'
+
+# PUBLISHER IDENTITY 
+mqtt_publisher_identity='$LOCATION'
+
+# MQTT PORT 
+mqtt_port='$MQTTPORT'
+
+# MQTT CERTIFICATE FILE
+mqtt_certificate_path=''
+
+#MQTT VERSION (EXAMPLE: 'mqttv311')
+mqtt_version='mqttv311'
+
+
