@@ -8,6 +8,8 @@ fi
 # Setup Rapsi-Config
 /usr/lib/raspi-config/init_resize.sh
 
+source /boot/montior.env
+
 sudo aspi-config nonint do_hostname "$HOSTNAME"
 sudo raspi-config nonint do_ssh 1
 sudo raspi-config nonint do_wifi_country "US"
@@ -41,7 +43,10 @@ sudo apt-get install -y vim git pi-bluetooth
 cd ~
 git clone https://github.com/constructorfleet/monitor.git
 git clone https://github.com/constructprfleet/monitor-setup-script.git
+for template in ~/monitor-setup-script/*.template; do
+    templatename=$(basename -- "$i")
+    outputname=${filename%.*}
+    cat $template | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" > ~/monitor/$outputname
 cd monitor/
-
-
 sudo touch SETUP_COMPLETE_FILE
+sudo bash monitor.sh
